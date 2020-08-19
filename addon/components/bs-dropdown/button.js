@@ -1,7 +1,4 @@
 import Button from 'ember-bootstrap/components/bs-button';
-import { layout as templateLayout } from '@ember-decorators/component';
-import layout from 'ember-bootstrap/templates/components/bs-dropdown/button';
-import { computed, action } from '@ember/object';
 
 /**
  Button component with that can act as a dropdown toggler.
@@ -13,17 +10,4 @@ import { computed, action } from '@ember/object';
  @extends Components.Button
  @public
  */
-@templateLayout(layout)
-export default class DropdownButton extends Button {
-  '__ember-bootstrap_subclass' = true;
-
-  @action
-  handleKeyDown(e) {
-    this.onKeyDown(e);
-  }
-
-  @computed('isOpen')
-  get ariaExpanded() {
-    return this.isOpen ? 'true' : 'false';
-  }
-}
+export default class DropdownButton extends Button {}
